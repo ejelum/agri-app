@@ -17,7 +17,7 @@ phases:
       # Sync files from CodeBuild's workspace to S3 bucket
       # Replace www.ejiro.de with your S3 bucket name
       - aws s3 sync . s3://www.ejiro.de/ --delete --acl public-read
-      - echo "Files synced to S3 bucket: s3://www.ejiro.de/"
+      - echo "Files synced to S3 bucket: s3://www.ejiro.de/
 
   post_build:
     commands:
