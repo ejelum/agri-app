@@ -10,7 +10,6 @@ phases:
   pre_build:
     commands:
       - echo "Pre-build phase - no specific commands for static site"
-
   build:
     commands:
       - echo "Starting build phase..."
@@ -18,7 +17,6 @@ phases:
       # Replace www.ejiro.de with your S3 bucket name
       - aws s3 sync . s3://www.ejiro.de/ --delete --acl public-read
       - echo "Files synced to S3 bucket: s3://www.ejiro.de/"
-
   post_build:
     commands:
       - echo "Starting post-build phase - invalidating CloudFront cache..."
