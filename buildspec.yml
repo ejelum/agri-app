@@ -2,6 +2,9 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      # Specify the Node.js version if you have JS build steps, otherwise optional
+      # nodejs: 18
     commands:
       # Install AWS CLI if not already present in the build image (usually is)
       - echo "Installing dependencies..."
@@ -14,22 +17,22 @@ phases:
     commands:
       - echo "Starting build phase..."
       # Sync files from CodeBuild's workspace to S3 bucket
-      # Replace $S3_BUCKET_NAME with your S3 bucket name, configured as an environment variable in CodeBuild
-      - aws s3 sync s3://www.ejiro.de/ --delete --acl public-read
+      # Replace www.ejiro.de with your S3 bucket name
+      - aws s3 sync . s3://www.ejiro.de/ --delete --acl public-read
       - echo "Files synced to S3 bucket: s3://www.ejiro.de/"
 
   post_build:
     commands:
       - echo "Starting post-build phase - invalidating CloudFront cache..."
       # Invalidate CloudFront cache
-      # Replace $CLOUDFRONT_DISTRIBUTION_ID with your actual CloudFront Distribution ID
+      # Replace YOUR_CLOUDFRONT_DISTRIBUTION_ID with your actual CloudFront Distribution ID
       # You can find this ID in the CloudFront console (e.g., E123ABCDEFG)
-      - aws cloudfront create-invalidation --distribution-id E1W81S3NGMZMEX --paths "/**"
+      - aws cloudfront create-invalidation --distribution-id E1W81S3NGMZMEX --paths "/*"
       - echo "CloudFront cache invalidation initiated."
 
 artifacts:
   # This section is not strictly needed for static site deployment to S3
   # but can be used if you want to store build output elsewhere.
   files:
-    - "**/*"
+    - '**/*'
   base-directory: .
