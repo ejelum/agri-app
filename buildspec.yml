@@ -15,7 +15,7 @@ phases:
       - echo "Starting build phase..."
       # Sync files from CodeBuild's workspace to S3 bucket
       # Replace $S3_BUCKET_NAME with your S3 bucket name, configured as an environment variable in CodeBuild
-      - aws s3 sync . s3://$www.ejiro.de/ --delete --acl public-read
+      - aws s3 sync s3://$www.ejiro.de/ --delete --acl public-read
       - echo "Files synced to S3 bucket: s3://$www.ejiro.de/"
 
   post_build:
