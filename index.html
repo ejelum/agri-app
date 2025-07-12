@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Connecting Farms to Market</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2f7; /* Light blue background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4">
+    <header class="text-center py-8 bg-white rounded-xl shadow-md mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-2">AgriConnect</h1>
+        <p class="text-xl md:text-2xl text-gray-700">Streamlining Agriculture Logistics in Nigeria</p>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Choose Your Role</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Farm User Card -->
+            <div class="card bg-white p-6 rounded-2xl shadow-lg border border-green-200 flex flex-col items-center text-center">
+                <div class="text-6xl mb-4" role="img" aria-label="Farm Icon">🚜</div>
+                <h3 class="text-2xl font-bold text-green-700 mb-3">Farm Portal</h3>
+                <p class="text-gray-600 mb-6 flex-grow">
+                    For farmers to easily input crop details, planting/harvest dates, and GPS location, ensuring timely logistics and reduced spoilage.
+                </p>
+                <a href="indeed1.html" class="w-full bg-green-600 text-white py-3 px-6 rounded-xl hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-150 ease-in-out font-semibold shadow-md">
+                    Login as Farmer
+                </a>
+            </div>
+
+            <!-- Driver User Card -->
+            <div class="card bg-white p-6 rounded-2xl shadow-lg border border-blue-200 flex flex-col items-center text-center">
+                <div class="text-6xl mb-4" role="img" aria-label="Truck Icon">🚚</div>
+                <h3 class="text-2xl font-bold text-blue-700 mb-3">Driver Portal</h3>
+                <p class="text-gray-600 mb-6 flex-grow">
+                    For logistics personnel to receive real-time pickup requests, optimize routes, and manage deliveries efficiently.
+                </p>
+                <a href="#" class="w-full bg-blue-600 text-white py-3 px-6 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out font-semibold shadow-md">
+                    Driver Login
+                </a>
+            </div>
+
+            <!-- Admin User Card -->
+            <div class="card bg-white p-6 rounded-2xl shadow-lg border border-purple-200 flex flex-col items-center text-center">
+                <div class="text-6xl mb-4" role="img" aria-label="Gear Icon">⚙️</div>
+                <h3 class="text-2xl font-bold text-purple-700 mb-3">Admin Dashboard</h3>
+                <p class="text-gray-600 mb-6 flex-grow">
+                    For administrators to oversee operations, manage users, analyze data, and optimize storage hubs and overall logistics.
+                </p>
+                <a href="#" class="w-full bg-purple-600 text-white py-3 px-6 rounded-xl hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition duration-150 ease-in-out font-semibold shadow-md">
+                    Admin Login
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-gray-600 text-sm mt-8">
+        &copy; 2025 AgriConnect. All rights reserved.
+    </footer>
+</body>
+</html>
