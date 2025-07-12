@@ -3,10 +3,8 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      # Specify the Node.js version if you have JS build steps, otherwise optional
-      # nodejs: 18
+      nodejs: 18 # Uncommented and specified Node.js version
     commands:
-      # Install AWS CLI if not already present in the build image (usually is)
       - echo "Installing dependencies..."
 
   pre_build:
