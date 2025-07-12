@@ -15,8 +15,8 @@ phases:
       - echo "Starting build phase..."
       # Sync files from CodeBuild's workspace to S3 bucket
       # Replace $S3_BUCKET_NAME with your S3 bucket name, configured as an environment variable in CodeBuild
-      - aws s3 sync s3://$www.ejiro.de/ --delete --acl public-read
-      - echo "Files synced to S3 bucket: s3://$www.ejiro.de/"
+      - aws s3 sync s3://www.ejiro.de/ --delete --acl public-read
+      - echo "Files synced to S3 bucket: s3://www.ejiro.de/"
 
   post_build:
     commands:
@@ -24,7 +24,7 @@ phases:
       # Invalidate CloudFront cache
       # Replace $CLOUDFRONT_DISTRIBUTION_ID with your actual CloudFront Distribution ID
       # You can find this ID in the CloudFront console (e.g., E123ABCDEFG)
-      - aws cloudfront create-invalidation --distribution-id $E1W81S3NGMZMEX --paths "/**"
+      - aws cloudfront create-invalidation --distribution-id E1W81S3NGMZMEX --paths "/**"
       - echo "CloudFront cache invalidation initiated."
 
 artifacts:
